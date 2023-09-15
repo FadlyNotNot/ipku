@@ -98,12 +98,10 @@ fi
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-#IZIN SCRIPT
-MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "\e[32mloading...\e[0m"
 CHATID="-1001899398362"
 KEY="6293396608:AAFR9MI4hz8Jfe7AVITf1ANVxOVUhe_lZmc"
 TIME="10"
+JAM="$(date +'%Y-%m-%d %H:%M:%S')"
 clear
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
@@ -249,7 +247,7 @@ else
 fi
 }
 
-# GEO PROJECT
+# Install Nginx
 clear
 function nginx_install() {
     # // Checking System
@@ -345,22 +343,22 @@ function password_default() {
 
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="
-◇━━━━━━━━━━━━━━━━━━━◇
-  ⚠️ NOTIF INSTALL V3.0 ⚠️
-◇━━━━━━━━━━━━━━━━━━━◇
-<code>Tanggal  :</code> <code>$tanggal</code>
-<code>Hostname :</code> <code>${HOSTNAME}</code>
-<code>OS Vps   :</code> <code>$OS_Name</code>
-<code>Ram Left :</code> <code>$Ram_Usage MB</code>
-<code>Ram Used :</code> <code>$Ram_Total MB</code>
-◇━━━━━━━━━━━━━━━━◇
-<code>Domain   :</code> <code>$domain</code>
-<code>IP Vps   :</code> <code>$MYIP</code>
-<code>Username :</code> <code>$username</code>
-<code>Expired  :</code> <code>$exp</code>
-◇━━━━━━━━━━━━━━━━◇
-"
-   curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+<code>────────────────────</code>
+<b>⚡AUTOSCRIPT PREMIUM⚡</b>
+<code>────────────────────</code>
+<code>Date  :</code> <code>$JAM</code>
+<code>Linux  :</code> <code>$OS_Name</code>
+<code>Ram :</code> <code>$Ram_Total MB</code>
+<code>Domain :</code> <code>$domain</code>
+<code>IP Vps :</code> <code>$MYIP</code>
+<code>Owner  :</code> <code>$username</code>
+<code>Exp    :</code> <code>$exp</code>
+<code>────────────────────</code>
+<b>FV STORE TUNNELING</b>
+<code>────────────────────</code>
+<i>Automatic Notifications From Github</i>
+"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ⚡","url":"https://t.me/fdlyvpn_ID"}]]}'
+    curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 
 clear
