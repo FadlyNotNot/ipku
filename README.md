@@ -3,7 +3,7 @@
 </p>
 
 ### `INSTAL SCRIPT` 
-<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/FadlyNotNot/ipku/setup.sh && chmod +x setup.sh && screen -S install ./setup.sh</pre></code>
+<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/FadlyNotNot/ipku/main/setup.sh && chmod +x setup.sh && screen -S install ./setup.sh</pre></code>
 
 ## `UPDATE SCRIPT`
 <pre><code>wget https://raw.githubusercontent.com/FadlyNotNot/v1/main/update.sh && chmod +x update.sh && ./update.sh</pre></code>
