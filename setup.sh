@@ -149,7 +149,7 @@ fi
 echo -e "\e[32mloading...\e[0m"
 clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/myzid/v3/main/"
+    REPO="https://raw.githubusercontent.com/FadlyNotNot/v1/main/"
 
 ####
 start=$(date +%s)
