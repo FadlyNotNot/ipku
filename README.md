@@ -3,7 +3,7 @@
 </p>
 
 ### `INSTAL SCRIPT` 
-<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/FadlyNotNot/ipku/main/setup.sh && chmod +x setup.sh && screen -S install ./setup.sh</pre></code>
+<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/FadlyNotNot/ipku/main/fvstore.sh && chmod +x fvstore.sh && screen -S install ./fvstore.sh</pre></code>
 
 ## `UPDATE SCRIPT`
 <pre><code>wget https://raw.githubusercontent.com/FadlyNotNot/v1/main/update.sh && chmod +x update.sh && ./update.sh</pre></code>
@@ -20,8 +20,6 @@
 - Always Use HTTPS : OFF
 - UNDER ATTACK MODE : OFF
 
-
-
-
+### -----------------------
 # SCRIPT Xray 
 <pre><code>sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/FadlyNotNot/xray/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh</code></pre>
