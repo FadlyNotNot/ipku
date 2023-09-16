@@ -346,17 +346,18 @@ TEXT="
 <code>────────────────────</code>
 <b>⚡AUTOSCRIPT PREMIUM⚡</b>
 <code>────────────────────</code>
-<code>Date  :</code> <code>$JAM</code>
-<code>Linux  :</code> <code>$OS_Name</code>
-<code>Ram :</code> <code>$Ram_Total MB</code>
-<code>Domain :</code> <code>$domain</code>
-<code>IP Vps :</code> <code>$MYIP</code>
-<code>Owner  :</code> <code>$username</code>
-<code>Exp    :</code> <code>$exp</code>
+Date  : <code>$JAM</code>
+Jam   : <code>$WKT</code>
+Linux : <code>$OS_Name</code>
+Ram   : <code>$Ram_Total MB</code>
+Host  : <code>$domain</code>
+IPVPS : <code>$MYIP</code>
+Owner : <code>$username</code>
+Exp   : <code>$exp</code>
 <code>────────────────────</code>
 <b>FV STORE TUNNELING</b>
 <code>────────────────────</code>
-<i>Automatic Notifications From Github</i>
+<i>Nontifikasi Otomatis Dari Github</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ⚡","url":"https://t.me/fdlyvpn_ID"}]]}'
     curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
