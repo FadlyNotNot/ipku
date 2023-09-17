@@ -13,9 +13,9 @@ read -rp "    Token Bot : " -e Token
 read -rp "    Chat ID   : " -e ID
 echo ""
 echo -e "${z}└────────────────────────────────────────┘${x}" 
-}
-notif.sh
 clear
+notif
+}
 
 
 function kirim() {
@@ -50,8 +50,8 @@ User Quota  : <code>LIQ</code>
 <i>Nontifikasi Otomatis Dari FV STORE Bot</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"⚡ ORDER ⚡","url":"https://t.me/fdlyvpn_ID"}]]}'
     curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+notif
 }
-notif.sh
 clear
 echo -e "${z}┌────────────────────────────────────────┐${x}"
 echo -e "${z}│                 PILIH OPTION                  "
@@ -65,5 +65,5 @@ read -p " Pilih Option ( 1 - 2 ) " notif
 case $notif in
 1) clear ; notif ;;
 2) clear ; kirim ;;
-*) clear ; notif.sh ;;
+*) clear ; notif ;;
 esac
