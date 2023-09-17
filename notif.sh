@@ -13,12 +13,6 @@ read -rp "    Token Bot : " -e Token
 read -rp "    Chat ID   : " -e ID
 echo ""
 echo -e "${z}└────────────────────────────────────────┘${x}" 
-clear
-CHATID="$ID"
-KEY="$Token"
-TIME="10"
-JAM="$(date +'%Y-%m-%d')"
-WKT="$(date +'%H:%M:%S')"
 }
 notif.sh
 clear
@@ -36,8 +30,11 @@ read -rp "     User Quota " : -e LIQ
 read -rp "     Expired " : -e exp
 echo -e ""
 echo -e "${z}└────────────────────────────────────────┘${x}"
-clear
-
+CHATID="$ID"
+KEY="$Token"
+TIME="10"
+JAM="$(date +'%Y-%m-%d')"
+WKT="$(date +'%H:%M:%S')"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="
 <code>────────────────────</code>
@@ -69,3 +66,4 @@ case $notif in
 1) clear ; notif ;;
 2) clear ; kirim ;;
 *) clear ; notif.sh ;;
+esac
