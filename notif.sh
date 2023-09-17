@@ -5,7 +5,7 @@ echo -e "   │                 MASUKAN TOKEN                    " | lolcat
 echo -e "   └────────────────────────────────────────┘" | lolcat
 echo ""
 read -rp "     Token Bot " -e Token
-read -p "     Chat ID " -e ID
+read -rp "      Chat ID " -e ID
 echo ""
 echo -e "   └────────────────────────────────────────┘" | lolcat
 clear
@@ -18,13 +18,13 @@ clear
 echo -e "   ┌────────────────────────────────────────┐" | lolcat
 echo -e "   │                 INPORT DATA MU                    " | lolcat
 echo -e "   └────────────────────────────────────────┘" | lolcat
-echo ""
-read -p "     Username " : -e Login
-read -p "     Harga " : -e Harga
-read -p "     User IP " : -e LIP
-read -p "     User Quota " : -e LIQ
-read -p "     Expired " : -e exp
-echo ""
+echo -e ""
+read -rp "     Username " : -e Login
+read -rp "     Harga " : -e Harga
+read -rp "     User IP " : -e LIP
+read -rp "     User Quota " : -e LIQ
+read -rp "     Expired " : -e exp
+echo -e ""
 echo -e "   └────────────────────────────────────────┘" | lolcat
 clear
 URL="https://api.telegram.org/bot$KEY/sendMessage"
