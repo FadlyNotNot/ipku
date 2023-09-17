@@ -4,21 +4,6 @@ x="\e[0m"
 z="\e033[93m"
 y="\e033[97"
 clear
-echo -e "${z}┌────────────────────────────────────────┐${x}"
-echo -e "${z}│                 PILIH OPTION                  "
-echo -e "${z}└────────────────────────────────────────┘${x}"
-echo -e ""
-echo -e "  [1] ADD NOTIF 
-echo -e "  [2] KIRIM NOTIF
-echo -e ""
-echo -e "${z}└────────────────────────────────────────┘${x}" 
-read -p " Pilih Option ( 1 - 2 ) " notif
-case $notif in
-1) clear ; notif ;;
-2) clear ; kirim ;;
-*) clear ; notif.sh ;;
-clear
-
 function notif() {
 echo -e "${z}┌────────────────────────────────────────┐${x}"
 echo -e "${z}│                 MASUKAN TOKEN                  "
@@ -51,10 +36,7 @@ read -rp "     User Quota " : -e LIQ
 read -rp "     Expired " : -e exp
 echo -e ""
 echo -e "${z}└────────────────────────────────────────┘${x}"
-}
-notif.sh
 clear
-
 
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="
@@ -69,6 +51,22 @@ User IP  : <code>$LIP</code>
 User Quota  : <code>LIQ</code>
 <code>────────────────────</code>
 <i>Nontifikasi Otomatis Dari FV STORE Bot</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ⚡","url":"https://t.me/fdlyvpn_ID"}]]}'
+"'&reply_markup={"inline_keyboard":[[{"text":"⚡ ORDER ⚡","url":"https://t.me/fdlyvpn_ID"}]]}'
     curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+}
+notif.sh
+clear
+echo -e "${z}┌────────────────────────────────────────┐${x}"
+echo -e "${z}│                 PILIH OPTION                  "
+echo -e "${z}└────────────────────────────────────────┘${x}"
+echo -e ""
+echo -e "  [1] ADD NOTIF 
+echo -e "  [2] KIRIM NOTIF
+echo -e ""
+echo -e "${z}└────────────────────────────────────────┘${x}" 
+read -p " Pilih Option ( 1 - 2 ) " notif
+case $notif in
+1) clear ; notif ;;
+2) clear ; kirim ;;
+*) clear ; notif.sh ;;
 clear
