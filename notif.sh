@@ -69,4 +69,3 @@ case $notif in
 1) clear ; notif ;;
 2) clear ; kirim ;;
 *) clear ; notif.sh ;;
-clear
