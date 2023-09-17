@@ -1,13 +1,17 @@
 #!/bin/bash
+########## COLOR ##########
+x='\e[0m'
+z='\e033[93m`
+y='\e033[97`
 clear
-echo -e "   ┌────────────────────────────────────────┐" | lolcat
-echo -e "   │                 MASUKAN TOKEN                    " | lolcat
-echo -e "   └────────────────────────────────────────┘" | lolcat
+echo -e "${z}┌────────────────────────────────────────┐${x}"
+echo -e "${z}│                 MASUKAN TOKEN                  "
+echo -e "${z}└────────────────────────────────────────┘${x}"
 echo ""
-read -rp "     Token Bot " -e Token
-read -rp "      Chat ID " -e ID
+read -rp "    Token Bot : " -e Token
+read -rp "    Chat ID   : " -e ID
 echo ""
-echo -e "   └────────────────────────────────────────┘" | lolcat
+echo -e "${z}└────────────────────────────────────────┘${x}" 
 clear
 CHATID="$ID"
 KEY="$Token"
@@ -15,9 +19,9 @@ TIME="10"
 JAM="$(date +'%Y-%m-%d')"
 WKT="$(date +'%H:%M:%S')"
 clear
-echo -e "   ┌────────────────────────────────────────┐" | lolcat
-echo -e "   │                 INPORT DATA MU                    " | lolcat
-echo -e "   └────────────────────────────────────────┘" | lolcat
+echo -e "${z}┌────────────────────────────────────────┐${x}"
+echo -e "${z}│                 INPORT DATA MU                 "
+echo -e "${z}└────────────────────────────────────────┘${x}"
 echo -e ""
 read -rp "     Username " : -e Login
 read -rp "     Harga " : -e Harga
@@ -25,7 +29,7 @@ read -rp "     User IP " : -e LIP
 read -rp "     User Quota " : -e LIQ
 read -rp "     Expired " : -e exp
 echo -e ""
-echo -e "   └────────────────────────────────────────┘" | lolcat
+echo -e "${z}└────────────────────────────────────────┘${x}"
 clear
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="
@@ -42,5 +46,4 @@ Exp   : <code>$exp</code>
 <i>Nontifikasi Otomatis Dari FV STORE Bot</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ⚡","url":"https://t.me/fdlyvpn_ID"}]]}'
     curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
-}
 clear
