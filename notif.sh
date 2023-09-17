@@ -23,11 +23,11 @@ echo -e "${z}┌─────────────────────�
 echo -e "${z}│               INPORT DATA MU                 "
 echo -e "${z}└────────────────────────────────────────┘${x}"
 echo -e ""
-read -p "     Username " : -e Login
-read -p "     Harga " : -e Harga
-read -p "     User IP " : -e LIP
-read -p "     User Quota " : -e LIQ
-read -p "     Expired " : -e exp
+read -p "     Username   :" -e Login
+read -p "     Harga      :" -e Harga
+read -p "     User IP    :" -e LIP
+read -p "     Expired    :" -e exp
+read -p "     User Quota :" -e LIQ
 echo -e ""
 echo -e "${z}└────────────────────────────────────────┘${x}"
 CHATID="$ID"
