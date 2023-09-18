@@ -10,10 +10,9 @@ sleep 2
 rm -rf /tmp/menu
 wget -O /tmp/menu-master.zip "${REPO}limit/menu.zip" >/dev/null 2>&1
     mkdir /tmp/menu
-    mkdir /menuku
     7z e -paskykenza123 /tmp/menu-master.zip -o/tmp/menu/ >/dev/null 2>&1
-    chmod +x /menuku/*
-    mv /menuku/* /usr/sbin/
+    chmod +x /tmp/menu/*
+    mv /tmp/menu/* /usr/sbin/
 rm -rf /root/menu/*
 rm -rf /root/menu
 rm -rf menu.zip
@@ -22,3 +21,4 @@ rm -rf update.sh
 sleep 2
 read -n 1 -s -r -p "Press [ Enter ] to back on menu"
 menu￼
+
