@@ -12,13 +12,14 @@ export NC='\033[0m'
 PATH="/usr/bin:$PATH"
 x=`basename $0`
 if test $# = 0; then
-  echo  "          ${PURPLE}=============================================================${NC}"
-  echo  "          ${RED}#----------------------${NC}${GREEN}[MENU  ENCRYPTER]${NC}${RED}--------------------#${NC}"
-  echo  "          ${CYAN}=============================================================${NC}"
-  echo  "          ${RED}#${NC}            ${GREEN} USAGE : ketik encbzip2 spasi namafile${NC}             ${RED} #${NC}"
-  echo  " ${YELLOW}         -------------------------------------------------------------${NC}"
-  echo  "          ${RED}#${NC}          ${GREEN}   [ Copyright @ -  Delta-Project  (2023) ] ${NC}            ${RED}#${NC}"
-   echo  "${BLUE}          =============================================================${NC}"
+  echo  "${PURPLE}=============================================================${NC}"
+  echo  "                        ${GREEN}[MENU  ENCRYPTER]${NC}"
+  echo  "${CYAN}===============================================================${NC}"
+  echo  "${GREEN} TUTOR ENC : ketik ( bash bzip2 spasi namafile ) Tanpa Tanda Kurung${NC}"
+  echo  "${YELLOW}-------------------------------------------------------------${NC}"
+  echo  "${GREEN} [ Copyright @ -  Delta-Project  (2023) ]                     ${NC}"
+  echo  "${GREEN} [ Mod By    @ -  FV STORE ]                                  ${NC}"
+  echo  "${BLUE}===============================================================${NC}"
   exit 1
 fi
 
