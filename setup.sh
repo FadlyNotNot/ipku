@@ -2,8 +2,8 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 # BOT INFORMATION
 date=$(date -R | cut -d " " -f -5)
-export CHATID="-1001856677511"
-export KEY="6159615642:AAEoAjxKYMwN81Pcgas7b-F2GFYRB0kQomU"
+export CHATID="-1001899398362"
+export KEY="6293396608:AAFR9MI4hz8Jfe7AVITf1ANVxOVUhe_lZmc"
 export TIME="10"
 export URL="https://api.telegram.org/bot$KEY/sendMessage"
 IP=$(wget -qO- ipinfo.io/ip);
@@ -57,50 +57,6 @@ export BOLD="\e[1m"
 export WARNING="${RED}\e[5m"
 export UNDERLINE="\e[4m"
 
-BURIQ () {
-    curl -sS https://raw.githubusercontent.com/IlhamStore23/permission/main/ipmini > /root/tmp
-    data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
-    for user in "${data[@]}"
-    do
-    exp=( `grep -E "^### $user" "/root/tmp" | awk '{print $3}'` )
-    d1=(`date -d "$exp" +%s`)
-    d2=(`date -d "$biji" +%s`)
-    exp2=$(( (d1 - d2) / 86400 ))
-    if [[ "$exp2" -le "0" ]]; then
-    echo $user > /etc/.$user.ini
-    else
-    rm -f  /etc/.$user.ini > /dev/null 2>&1
-    fi
-    done
-    rm -f  /root/tmp
-}
-# https://raw.githubusercontent.com/IlhamStore23/permission/main/ipmini 
-MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/IlhamStore23/permission/main/ipmini | grep $MYIP | awk '{print $2}')
-echo $Name > /usr/local/etc/.$Name.ini
-CekOne=$(cat /usr/local/etc/.$Name.ini)
-
-Bloman () {
-if [ -f "/etc/.$Name.ini" ]; then
-CekTwo=$(cat /etc/.$Name.ini)
-    if [ "$CekOne" = "$CekTwo" ]; then
-        res="Expired"
-    fi
-else
-res="Permission Accepted..."
-fi
-}
-
-PERMISSION () {
-    MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/IlhamStore23/permission/main/ipmini | awk '{print $4}' | grep $MYIP)
-    if [ "$MYIP" = "$IZIN" ]; then
-    Bloman
-    else
-    res="Permission Denied!"
-    fi
-    BURIQ
-}
 
 clear
 #System version number
@@ -128,23 +84,7 @@ apt install git curl -y >/dev/null 2>&1
 echo -e "[ ${green}INFO${NC} ] installation file is ready"
 sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check your permission : "
-
-PERMISSION
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0
-elif [ "$res" = "Permission Accepted..." ]; then
-green "Permission Accepted!"
-else
-red "Permission Denied!
-Please Buy AutoScript Premium
-WA: 081391215759
-Telegram: t.me/CRSe7en2nd"
-rm setup.sh > /dev/null 2>&1
-sleep 10
-exit 0
-fi
-sleep 3
+echo -e " permission accepted "
 
 # // cek old script
 if [[ -r /etc/xray/domain ]]; then
@@ -160,7 +100,7 @@ clear
 echo -e "${INFO} Starting Replacing Script !"
 rm -rf /var/lib/scrz-prem 
 elif [[ $josdong == "N" ]]; then
-echo -e "${INFO} Action Canceled !"
+echo -e ${INFO} Action Canceled !"
 exit 1
 elif [[ $josdong == "n" ]]; then
 echo -e "${INFO} Action Canceled !"
